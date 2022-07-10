@@ -4,20 +4,63 @@
     <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
   </head>
   <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
+    <div class="wrapper">
+      <label class="checkbox" for="checkbox1">
+        <input id="checkbox1" class="checkboxInput" type="checkbox" checked />
+        <div class="checkboxIndicator"></div>
+        <div class="checkboxLabel">Label</div>
+      </label>
+
+      <label class="checkbox" for="checkbox2">
+        <input id="checkbox2" class="checkboxInput" type="checkbox" />
+        <div class="checkboxIndicator"></div>
+        <div class="checkboxLabel">Label</div>
+      </label>
+
+      <label class="checkbox" for="checkbox3">
+        <input id="checkbox3" class="checkboxInput" type="checkbox" />
+        <div class="checkboxIndicator"></div>
+        <div class="checkboxLabel">Label</div>
+      </label>
+    </div>
+
+    <div class="wrapper">
+      <label class="radioButton" for="radioButton1">
+        <input
+          id="radioButton1"
+          class="radioButtonInput"
+          type="radio"
+          name="radioButton"
+          checked
+        />
+        <div class="radioButtonIndicator"></div>
+        <div class="radioButtonLabel">Label</div>
+      </label>
+
+      <label class="radioButton" for="radioButton2">
+        <input
+          id="radioButton2"
+          class="radioButtonInput"
+          type="radio"
+          name="radioButton"
+        />
+        <div class="radioButtonIndicator"></div>
+        <div class="radioButtonLabel">Label</div>
+      </label>
+
+      <label class="radioButton" for="radioButton3">
+        <input
+          id="radioButton3"
+          class="radioButtonInput"
+          type="radio"
+          name="radioButton"
+        />
+        <div class="radioButtonIndicator"></div>
+        <div class="radioButtonLabel">Label</div>
+      </label>
+    </div>
   </body>
 </html>

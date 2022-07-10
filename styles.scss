@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 0.625rem;
+  user-select: none;
+}
+.wrapper + .wrapper {
+  margin-top: 2.5rem;
+}
+
+// Checkbox
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .checkboxInput {
+    visibility: hidden;
+    height: 1.375rem;
+    width: 1.375rem;
+    margin: 0;
+
+    &:not(:checked) {
+      + {
+        .checkboxIndicator {
+          background-color: white;
+          border-color: gray;
+          &:after {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    // Checked
+    &:checked {
+      + {
+        .checkboxIndicator {
+          background-color: green;
+          border-color: green;
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .checkboxIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.375rem;
+    width: 1.375rem;
+    padding-bottom: 0.1875rem;
+    box-sizing: border-box;
+    border: {
+      style: solid;
+      width: 0.0625rem; // 1px
+      radius: 0;
+    }
+    cursor: pointer;
+    &:after {
+      content: '';
+      width: 0.625rem;
+      height: 0.3125rem;
+      border: {
+        top: none;
+        right: none;
+        bottom: 0.125rem solid white; // 2px
+        left: 0.125rem solid white; // 2px
+      }
+      transform: rotate(-45deg);
+    }
+  }
+
+  .checkboxIndicator + .checkboxLabel {
+    margin-left: 0.875rem;
+  }
+
+  .checkboxLabel {
+    color: black;
+    font: {
+      family: Arial;
+      size: 1.125rem;
+      width: normal;
+    }
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+
+// Radio button
+.radioButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .radioButtonInput {
+    visibility: hidden;
+    height: 1.375rem;
+    width: 1.375rem;
+    margin: 0;
+
+    &:not(:checked) {
+      + {
+        .radioButtonIndicator {
+          border-color: gray;
+          &:after {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    // Checked
+    &:checked {
+      + {
+        .radioButtonIndicator {
+          border-color: orange;
+          &:after {
+            opacity: 1;
+            background-color: orange;
+          }
+        }
+      }
+    }
+  }
+
+  .radioButtonIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.375rem;
+    width: 1.375rem;
+    background-color: white;
+    box-sizing: border-box;
+    border: {
+      style: solid;
+      width: 0.0625rem; // 1px
+      radius: 50%;
+    }
+    cursor: pointer;
+    &:after {
+      content: '';
+      width: 0.75rem;
+      height: 0.75rem;
+      border: {
+        radius: 50%;
+      }
+      background-color: white;
+    }
+  }
+
+  .radioButtonIndicator + .radioButtonLabel {
+    margin-left: 0.875rem;
+  }
+
+  .radioButtonLabel {
+    color: black;
+    font: {
+      family: Arial;
+      size: 1.125rem;
+      width: normal;
+    }
+    line-height: 1;
+    cursor: pointer;
+  }
+}
